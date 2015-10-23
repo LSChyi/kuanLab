@@ -1,8 +1,8 @@
-angular.module('labApp', [ 'ui.router' ])
+angular.module('labApp', ['ui.router'])
     .config(function($stateProvider, $urlRouterProvider) {
-         $urlRouterProvider.otherwise("/home");
+        $urlRouterProvider.otherwise("/home");
 
-         $stateProvider
+        $stateProvider
             .state('home', {
                 url: '/home',
                 templateUrl: 'templates/home.html'
@@ -22,4 +22,25 @@ angular.module('labApp', [ 'ui.router' ])
             .state('link_resoreces', {
                 url: '/link_resoreces'
             })
+    })
+    .controller('navCtrl', function($scope) {
+        $scope.nav_init = function() {
+            angular.element(document).ready(function() {
+                $('.img-header-text')
+                    .visibility({
+                        once: false,
+                        onTopPassed: function() {
+                            $('.fixed.menu').transition('fade in');
+                        },
+                        onTopPassedReverse: function() {
+                            $('.fixed.menu').transition('fade out');
+                        }
+                    });
+
+                // create sidebar and attach to menu open
+                $('.ui.sidebar')
+                    .sidebar('attach events', '.toc.item');
+
+            })
+        }
     })
