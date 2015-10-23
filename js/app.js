@@ -14,7 +14,8 @@ angular.module('labApp', ['ui.router'])
                 url: '/activities'
             })
             .state('members', {
-                url: '/members'
+                url: '/members',
+                templateUrl: 'templates/members.html'
             })
             .state('reports', {
                 url: '/reports'
