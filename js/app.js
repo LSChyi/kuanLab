@@ -1,4 +1,4 @@
-angular.module('labApp', ['ui.router', 'modify', 'member'])
+angular.module('labApp', ['ui.router', 'modify', 'member', 'about'])
     .config(function($stateProvider, $urlRouterProvider) {
         $urlRouterProvider.otherwise("/home");
 
@@ -8,7 +8,8 @@ angular.module('labApp', ['ui.router', 'modify', 'member'])
                 templateUrl: 'templates/home.html'
             })
             .state('about', {
-                url: '/about'
+                url: '/about',
+                templateUrl: 'templates/about.html'
             })
             .state('activities', {
                 url: '/activities'
