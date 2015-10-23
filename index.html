@@ -9,25 +9,25 @@
     <link rel="stylesheet" type="text/css" href="css/style.css" />
 </head>
 
-<body>
+<body ng-app="labApp">
     <div class="ui large top fixed hidden menu">
         <div class="ui container">
-            <a class="active item">Home</a>
-            <a class="item">About</a>
-            <a class="item">Activities</a>
-            <a class="item">Members</a>
-            <a class="item">Reports</a>
-            <a class="item">Link&amp;Resorces</a>
+            <a class="item" ui-sref="home" ui-sref-active="active">Home</a>
+            <a class="item" ui-sref="about" ui-sref-active="active">About</a>
+            <a class="item" ui-sref="activities" ui-sref-active="active">Activities</a>
+            <a class="item" ui-sref="members" ui-sref-active="active">Members</a>
+            <a class="item" ui-sref="reports" ui-sref-active="active">Reports</a>
+            <a class="item" ui-sref="link_resoreces" ui-sref-active="active">Link&amp;Resorces</a>
         </div>
     </div>
     <!-- Sidebar Menu -->
     <div class="ui vertical inverted sidebar menu">
-        <a class="active item">Home</a>
-        <a class="item">About</a>
-        <a class="item">Activities</a>
-        <a class="item">Members</a>
-        <a class="item">Reports</a>
-        <a class="item">Link&amp;Resorces</a>
+        <a class="item" ui-sref="home" ui-sref-active="active">Home</a>
+        <a class="item" ui-sref="about" ui-sref-active="active">About</a>
+        <a class="item" ui-sref="activities" ui-sref-active="active">Activities</a>
+        <a class="item" ui-sref="members" ui-sref-active="active">Members</a>
+        <a class="item" ui-sref="reports" ui-sref-active="active">Reports</a>
+        <a class="item" ui-sref="link_resoreces" ui-sref-active="active">Link&amp;Resorces</a>
     </div>
     <!-- Page Contents -->
     <div class="pusher">
@@ -37,12 +37,12 @@
                     <a class="toc item">
                         <i class="sidebar icon"></i>
                     </a>
-                    <a class="active item">Home</a>
-                    <a class="item">About</a>
-                    <a class="item">Activities</a>
-                    <a class="item">Members</a>
-                    <a class="item">Reports</a>
-                    <a class="item">Link&amp;Resorces</a>
+                    <a class="item" ui-sref="home" ui-sref-active="active">Home</a>
+                    <a class="item" ui-sref="about" ui-sref-active="active">About</a>
+                    <a class="item" ui-sref="activities" ui-sref-active="active">Activities</a>
+                    <a class="item" ui-sref="members" ui-sref-active="active">Members</a>
+                    <a class="item" ui-sref="reports" ui-sref-active="active">Reports</a>
+                    <a class="item" ui-sref="link_resoreces" ui-sref-active="active">Link&amp;Resorces</a>
                 </div>
             </div>
             <div class="ui text container img-header-text">
@@ -51,12 +51,7 @@
         </div>
         <div class="ui vertical stripe segment">
             <div class="ui middle aligned stackable grid container">
-                <div class="row">
-                    <div class="eight wide column">
-                        <h3 class="ui header">We Help Companies and Companions</h3>
-                        <p>We can give your company superpowers to do things that they never thought possible. Let us delight your customers and empower your needs...through pure data analytics.</p>
-                    </div>
-                </div>
+                <div ui-view></div>
             </div>
         </div>
         <div class="ui inverted vertical footer segment">
@@ -91,6 +86,7 @@
     <!-- JS -->
     <script type="text/javascript" src="lib/angular/angular.min.js"></script>
     <script type="text/javascript" src="lib/angular/angular-ui-router.min.js"></script>
+    <script type="text/javascript" src="js/app.js"></script>
     <script type="text/javascript" src="lib/jquery-2.1.3/jquery-2.1.3.min.js"></script>
     <script type="text/javascript" src="lib/Semantic-UI-2.1.4/semantic.min.js"></script>
     <script type="text/javascript">
