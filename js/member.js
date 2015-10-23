@@ -7,5 +7,8 @@ angular.module('member', [])
                 .success(function(res) {
                     $scope.members = res;
                 })
+                .error(function() {
+                    alert("發生錯誤，請聯絡管理人");
+                })
         }
     })
