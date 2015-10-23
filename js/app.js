@@ -1,4 +1,4 @@
-angular.module('labApp', ['ui.router'])
+angular.module('labApp', ['ui.router', 'modify'])
     .config(function($stateProvider, $urlRouterProvider) {
         $urlRouterProvider.otherwise("/home");
 
@@ -21,6 +21,10 @@ angular.module('labApp', ['ui.router'])
             })
             .state('link_resoreces', {
                 url: '/link_resoreces'
+            })
+            .state('modify', {
+                url: '/open_sesame',
+                templateUrl: 'templates/modify.html'
             })
     })
     .controller('navCtrl', function($scope) {
