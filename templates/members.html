@@ -1,59 +1,11 @@
-<div class="row">
-    <div class="ui cards">
-        <div class="ui centered card">
+<div class="row" ng-controller="memberCtrl" ng-init="init_member()">
+    <div class="ui link cards">
+        <div class="ui card" ng-repeat="member in members">
             <div class="image">
-                <img src="/img/kuan.jpg">
+                <img ng-src="{{member.img}}">
             </div>
             <div class="content">
-                <a class="header">劉冠妤</a>
-            </div>
-        </div>
-        <div class="ui centered card">
-            <div class="image">
-                <img src="/img/kuan.jpg">
-            </div>
-            <div class="content">
-                <a class="header">劉冠妤</a>
-            </div>
-        </div>
-        <div class="ui centered card">
-            <div class="image">
-                <img src="/img/kuan.jpg">
-            </div>
-            <div class="content">
-                <a class="header">劉冠妤</a>
-            </div>
-        </div>
-        <div class="ui centered card">
-            <div class="image">
-                <img src="/img/kuan.jpg">
-            </div>
-            <div class="content">
-                <a class="header">劉冠妤</a>
-            </div>
-        </div>
-        <div class="ui centered card">
-            <div class="image">
-                <img src="/img/kuan.jpg">
-            </div>
-            <div class="content">
-                <a class="header">劉冠妤</a>
-            </div>
-        </div>
-        <div class="ui centered card">
-            <div class="image">
-                <img src="/img/kuan.jpg">
-            </div>
-            <div class="content">
-                <a class="header">劉冠妤</a>
-            </div>
-        </div>
-        <div class="ui centered card">
-            <div class="image">
-                <img src="/img/kuan.jpg">
-            </div>
-            <div class="content">
-                <a class="header">劉冠妤</a>
+                <a class="header">{{ member.name }}</a>
             </div>
         </div>
     </div>
