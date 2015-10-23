@@ -1,9 +1,16 @@
 angular.module('modify', [])
-    .controller('modifyCtrl', function($scope) {
-        $scope.members = [{
-            name: '劉冠妤',
-            img: 'img/kuan.jpg'
-        }];
+    .controller('modifyCtrl', function($scope, $http) {
+        $scope.members = [];
+        
+        $scope.retrieve_data = function() {
+            $http.get('data/members.html')
+                .success(function(res) {
+                    $scope.members = res;
+                })
+                .error(function() {
+                    alert("錯誤發生, 請聯絡管理員")
+                })
+        }
 
         $scope.add_member = function() {
             $scope.members.push({

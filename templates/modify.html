@@ -1,6 +1,6 @@
 <div class="row" ng-controller="modifyCtrl">
     <div class="eight wide column">
-        <form class="ui form">
+        <form class="ui form" ng-init="retrieve_data()">
             <h4 class="ui dividing header">修改成員</h4>   
             <div class="three fields" ng-repeat="member in members">
                 <div class="field">
