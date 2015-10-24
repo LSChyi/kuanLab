@@ -1,26 +1,101 @@
-<div class="row" ng-controller="modifyCtrl">
+<div class="row" ng-controller="modifyCtrl" ng-init="init_modify()">
     <div class="eight wide column">
-        <form class="ui form" ng-init="retrieve_data()">
-            <h4 class="ui dividing header">修改成員</h4>   
-            <div class="three fields" ng-repeat="member in members">
-                <div class="field">
-                    <input type="text" ng-model="member.name" placeholder="名字">
+        <div class="ui top attached tabular menu">
+            <a class="active item" data-tab="about">修改老師資料</a>
+            <a class="item" data-tab="members">修改成員</a>
+        </div>
+        <div class="ui bottom attached active tab segment" data-tab="about" ng-init="retrieve_about()">
+            <div class="ui top attached tabular menu">
+                <a class="active item" data-tab="information">個人資訊</a>
+                <a class="item" data-tab="resume">簡歷</a>
+                <a class="item" data-tab="work">著作</a>
+            </div>
+            <div class="ui bottom attached active tab segment" data-tab="information">
+                <form class="ui form">
+                    <div class="inline field">
+                        <label>姓名</label>
+                        <input type="text" ng-model="about.teacher.name">
+                    </div>
+                    <div class="inline field">
+                        <label>職稱</label>
+                        <input type="text" ng-model="about.teacher.title">
+                    </div>
+                    <div class="inline field">
+                        <label>辦公室</label>
+                        <input type="text" ng-model="about.teacher.office">
+                    </div>
+                    <div class="inline field">
+                        <label>電話</label>
+                        <input type="text" ng-model="about.teacher.phone">
+                    </div>
+                    <div class="inline field">
+                        <label>傳真</label>
+                        <input type="text" ng-model="about.teacher.fax">
+                    </div>
+                    <div class="inline field">
+                        <label>信箱</label>
+                        <input type="text" ng-model="about.teacher.mail">
+                    </div>
+                </form>
+            </div>
+            <div class="ui bottom attached tab segment" data-tab="resume">
+                <form class="ui form">
+                    <div class="field">
+                        <label>學歷</label>
+                        <input type="text" ng-model="about.teacher.resume.educational_background">
+                    </div>
+                    <div class="field">
+                        <label>經歷(請以換行區分課程)</label>
+                        <textarea rows="4" ng-model="about.teacher.resume.experience"></textarea>
+                    </div>
+                    <div class="field">
+                        <label>專長(請以換行區分課程)</label>
+                        <textarea rows="4" ng-model="about.teacher.resume.speciality"></textarea>
+                    </div>
+                    <div class="field">
+                        <label>教學課程(請以換行區分課程)</label>
+                        <textarea rows="4" ng-model="about.teacher.resume.course"></textarea>
+                    </div>
+                    <div class="field">
+                        <label>研究興趣(請以換行區分課程)</label>
+                        <textarea rows="4" ng-model="about.teacher.resume.research"></textarea>
+                    </div>
+                </form>
+            </div>
+            <div class="ui bottom attached tab segment" data-tab="work">
+            </div>
+            <h4 class="ui horizontal divider header">輸出about資料</h4>
+            <div class="output_container">
+                <div class="blue ui icon button" ng-click="output('about')">
+                    <i class="file icon"></i>輸出about資料
                 </div>
-                <div class="field">
-                    <input type="text" ng-model="member.img" placeholder="圖片檔名">
-                </div>
-                <div class="field">
-                    <div class="circular red ui icon button" ng-click="delete_member(member)">
-                        <i class="remove icon"></i>
+            </div>
+        </div>
+        <div class="ui bottom attached tab segment" data-tab="members">
+            <form class="ui form" ng-init="retrieve_members()">
+                <div class="three fields" ng-repeat="member in members">
+                    <div class="field">
+                        <input type="text" ng-model="member.name" placeholder="名字">
+                    </div>
+                    <div class="field">
+                        <input type="text" ng-model="member.img" placeholder="圖片檔名">
+                    </div>
+                    <div class="field">
+                        <div class="circular red ui icon button" ng-click="delete_member(member)">
+                            <i class="remove icon"></i>
+                        </div>
                     </div>
                 </div>
+                <div class="circular green ui icon button" ng-click="add_member()">
+                    <i class="icon add"></i>
+                </div>
+            </form>
+            <h4 class="ui horizontal divider header">輸出成員資料</h4>
+            <div class="output_container">
+                <div class="blue ui button" ng-click="output('members')">
+                    <i class="file icon"></i>輸出成員資料
+                </div>
             </div>
-            <div class="circular green ui icon button" ng-click="add_member()">
-                <i class="icon add"></i>
-            </div>
-            <div class="circular blue ui icon button" ng-click="output('members')">
-                <i class="file icon"></i>
-            </div>
-        </form>
+        </div>
     </div>
 </div>
