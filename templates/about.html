@@ -1,6 +1,6 @@
 <div class="row" ng-controller="aboutCtrl" ng-init="init_about()">
     <div class="eight wide column">
-        <img class="ui centered medium rounded image" src="/img/teacher.jpg">
+        <img class="ui centered medium rounded image" ng-src="{{teacher.img}}">
         <div class="ui top attached tabular menu">
             <a class="active item" data-tab="information">個人資訊</a>
             <a class="item" data-tab="history">簡歷</a>
@@ -11,31 +11,31 @@
                 <tbody>
                     <tr>
                         <td>姓名</td>
-                        <td>闕蓓德</td>
+                        <td>{{ teacher.name }}</td>
                     </tr>
                     <tr>
                         <td>職稱</td>
-                        <td>副教授</td>
+                        <td>{{ teacher.title }}</td>
                     </tr>
                     <tr>
                         <td>辦公室</td>
-                        <td>環工所206室</td>
+                        <td>{{ teacher.office }}</td>
                     </tr>
                     <tr>
                         <td>電話</td>
-                        <td>886-2-3366-2798</td>
+                        <td>{{ teacher.phone }}</td>
                     </tr>
                     <tr>
                         <td>傳真</td>
-                        <td>886-2-2392-8830</td>
+                        <td>{{ teacher.fax }}</td>
                     </tr>
                     <tr>
                         <td>信箱</td>
-                        <td>ptchueh@ntu.edu.tw</td>
+                        <td>{{ teacher.mail }}</td>
                     </tr>
                     <tr>
                         <td>實驗室</td>
-                        <td>永續資源管理研究室</td>
+                        <td>{{ teacher.lab }}</td>
                     </tr>
                 </tbody>
             </table>
@@ -44,37 +44,31 @@
             <div class="ui centered card">
                 <div class="content">
                     <div class="header">學歷</div>
-                    <div class="description">國立台灣大學環境工程學博士</div>
+                    <div class="description">{{ teacher.resume.educational_background }}</div>
                 </div>
             </div>
             <div class="ui centered card">
                 <div class="content">
                     <div class="header">經歷</div>
-                    <div class="description">中興工程顧問社 工程師</div>
-                    <div class="description">東南科技大學環境管理系 副教授</div>
+                    <div class="description" ng-repeat="e in teacher.resume.experience">{{ e }}</div>
                 </div>
             </div>
             <div class="ui centered card">
                 <div class="content">
                     <div class="header">專長</div>
-                    <div class="description">環境資訊管理與決策分析</div>
-                    <div class="description">廢棄物管理與工程設計</div>
+                    <div class="description" ng-repeat="e in teacher.resume.speciality">{{ e }}</div>
                 </div>
             </div>
             <div class="ui centered card">
                 <div class="content">
                     <div class="header">教學課程</div>
-                    <div class="description">地理資訊系統應用</div>
-                    <div class="description">自來水及下水道工程</div>
-                    <div class="description">環境風險分析與實習</div>
-                    <div class="description">環境規劃與管理總論</div>
+                    <div class="description" ng-repeat="e in teacher.resume.course">{{ e }}</div>
                 </div>
             </div>
             <div class="ui centered card">
                 <div class="content">
                     <div class="header">研究興趣</div>
-                    <div class="description">集水區經營管理</div>
-                    <div class="description">環境友善材質評估</div>
+                    <div class="description" ng-repeat="e in teacher.resume.research">{{ e }}</div>
                 </div>
             </div>
         </div>
