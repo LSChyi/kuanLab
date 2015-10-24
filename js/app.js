@@ -32,13 +32,13 @@ angular.module('labApp', ['ui.router', 'modify', 'member', 'about'])
     .controller('navCtrl', function($scope) {
         $scope.nav_init = function() {
             angular.element(document).ready(function() {
-                $('.img-header-text')
+                $('.secondary.pointing.menu')
                     .visibility({
                         once: false,
-                        onTopPassed: function() {
+                        onBottomPassed: function() {
                             $('.fixed.menu').transition('fade in');
                         },
-                        onTopPassedReverse: function() {
+                        onBottomPassedReverse: function() {
                             $('.fixed.menu').transition('fade out');
                         }
                     });
@@ -46,7 +46,6 @@ angular.module('labApp', ['ui.router', 'modify', 'member', 'about'])
                 // create sidebar and attach to menu open
                 $('.ui.sidebar')
                     .sidebar('attach events', '.toc.item');
-
             })
         }
     })
