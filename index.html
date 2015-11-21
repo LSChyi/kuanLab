@@ -13,12 +13,12 @@
 <body ng-app="labApp" ng-controller="navCtrl" ng-init="nav_init()">
     <div class="ui large top fixed hidden menu">
         <div class="ui container">
-            <a class="item" ui-sref="home" ui-sref-active="active">Home</a>
-            <a class="item" ui-sref="about" ui-sref-active="active">P.I.Profile</a>
-            <a class="item" ui-sref="members" ui-sref-active="active">Members</a>
-            <a class="item" ui-sref="courses" ui-sref-active="active">Courses</a>
-            <a class="item" ui-sref="publications" ui-sref-active="active">Publications</a>
-            <a class="item" ui-sref="projects" ui-sref-active="active">Projects</a>
+            <a class="nav_item item" ui-sref="home" ui-sref-active="active">Home</a>
+            <a class="nav_item item" ui-sref="about" ui-sref-active="active">P.I.Profile</a>
+            <a class="nav_item item" ui-sref="members" ui-sref-active="active">Members</a>
+            <a class="nav_item item" ui-sref="courses" ui-sref-active="active">Courses</a>
+            <a class="nav_item item" ui-sref="publications" ui-sref-active="active">Publications</a>
+            <a class="nav_item item" ui-sref="projects" ui-sref-active="active">Projects</a>
         </div>
     </div>
     <!-- Sidebar Menu -->
@@ -38,19 +38,19 @@
                     <a class="toc item">
                         <i class="sidebar icon"></i>
                     </a>
-                    <a class="item" ui-sref="home" ui-sref-active="active">Home</a>
-                    <a class="item" ui-sref="about" ui-sref-active="active">P.I.Profile</a>
-                    <a class="item" ui-sref="members" ui-sref-active="active">Members</a>
-                    <a class="item" ui-sref="courses" ui-sref-active="active">Courses</a>
-                    <a class="item" ui-sref="publications" ui-sref-active="active">Publications</a>
-                    <a class="item" ui-sref="projects" ui-sref-active="active">Projects</a>
+                    <a class="nav_item item" ui-sref="home" ui-sref-active="active">Home</a>
+                    <a class="nav_item item" ui-sref="about" ui-sref-active="active">P.I.Profile</a>
+                    <a class="nav_item item" ui-sref="members" ui-sref-active="active">Members</a>
+                    <a class="nav_item item" ui-sref="courses" ui-sref-active="active">Courses</a>
+                    <a class="nav_item item" ui-sref="publications" ui-sref-active="active">Publications</a>
+                    <a class="nav_item item" ui-sref="projects" ui-sref-active="active">Projects</a>
                 </div>
             </div>
             <div class="ui text img-header-text">
                 <h1 class="ui header" id="header_text">Sustainable Resource Management Laboratory<br />永續資源管理研究室</h1>
             </div>
         </div>
-        <div class="ui vertical stripe segment">
+        <div class="ui vertical stripe segment" id="content">
             <div class="ui middle aligned stackable grid container">
                 <div ui-view style="width:100%"></div>
             </div>
@@ -92,7 +92,10 @@
     <script type="text/javascript" src="js/modify.js"></script>
     <script type="text/javascript" src="js/member.js"></script>
     <script type="text/javascript" src="js/about.js"></script>
+    <script type="text/javascript" src="js/courses.js"></script>
+    <script type="text/javascript" src="js/home.js"></script>
     <script type="text/javascript" src="lib/jquery-2.1.3/jquery-2.1.3.min.js"></script>
+    <script type="text/javascript" src="lib/jquery.smooth-scroll.min.js"></script>
     <script type="text/javascript" src="lib/Semantic-UI-2.1.4/semantic.min.js"></script>
 </body>
 

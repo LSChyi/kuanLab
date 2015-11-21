@@ -1,4 +1,4 @@
-angular.module('labApp', ['ui.router', 'modify', 'member', 'about', '720kb.datepicker'])
+angular.module('labApp', ['ui.router', 'modify', 'member', 'about', '720kb.datepicker', 'courses', 'home'])
     .config(function($stateProvider, $urlRouterProvider) {
         $urlRouterProvider.otherwise("/home");
 
@@ -16,7 +16,8 @@ angular.module('labApp', ['ui.router', 'modify', 'member', 'about', '720kb.datep
                 templateUrl: 'templates/members.html'
             })
             .state('courses', {
-                url: '/courses'
+                url: '/courses',
+                templateUrl: 'templates/courses.html'
             })
             .state('publications', {
                 url: '/publications'
@@ -46,6 +47,13 @@ angular.module('labApp', ['ui.router', 'modify', 'member', 'about', '720kb.datep
                 // create sidebar and attach to menu open
                 $('.ui.sidebar')
                     .sidebar('attach events', '.toc.item');
+
+                $('.nav_item').on('click', function() {
+                    $.smoothScroll({
+                        scrollElement: $('body'),
+                        scrollTarget: '#content'
+                    });
+                });
             })
         }
     })

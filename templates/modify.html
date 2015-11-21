@@ -1,10 +1,30 @@
 <div class="row" ng-controller="modifyCtrl" ng-init="init_modify()">
     <div class="eight wide column">
         <div class="ui top attached tabular menu">
-            <a class="active item" data-tab="about">修改老師資料</a>
+            <a class="active item" data-tab="home">修改首頁資料</a>
+            <a class="item" data-tab="about">修改老師資料</a>
             <a class="item" data-tab="members">修改成員</a>
+            <a class="item" data-tab="courses">修改課程</a>
         </div>
-        <div class="ui bottom attached active tab segment" data-tab="about" ng-init="retrieve_about()">
+        <div class="ui bottom attached active tab segment" data-tab="home">
+            <form class="ui form">
+                <div class="field">
+                    <label>首頁標題</label>
+                    <input type="text" ng-model="home.title">
+                </div>
+                <div class="field">
+                    <label>首頁內文</label>
+                    <textarea ng-model="home.description"></textarea>
+                </div>
+            </form>
+            <h4 class="ui horizontal divider header">輸出首頁資料</h4>
+            <div class="output_container">
+                <div class="blue ui button" ng-click="output('home')">
+                    <i class="file icon"></i>輸出首頁資料
+                </div>
+            </div>
+        </div>
+        <div class="ui bottom attached tab segment" data-tab="about">
             <div class="ui top attached tabular menu">
                 <a class="active item" data-tab="information">個人資訊</a>
                 <a class="item" data-tab="resume">簡歷</a>
@@ -69,7 +89,7 @@
             </div>
         </div>
         <div class="ui bottom attached tab segment" data-tab="members">
-            <form class="ui form" ng-init="retrieve_members()">
+            <form class="ui form">
                 <div class="ui segment" ng-repeat="member in members">
                     <div class="seven fields">
                         <div class="field">
@@ -111,6 +131,34 @@
             <div class="output_container">
                 <div class="blue ui button" ng-click="output('members')">
                     <i class="file icon"></i>輸出成員資料
+                </div>
+            </div>
+        </div>
+        <div class="ui bottom attached tab segment" data-tab="courses">
+            <form class="ui form">
+                <div class="ui segment" ng-repeat="course in courses">
+                    <div class="field">
+                        <input type="text" ng-model="course.name" placeholder="課程名稱">
+                    </div>
+                    <div class="field">
+                        <textarea ng-model="course.description" placeholder="課程描述"></textarea>
+                    </div>
+                    <div class="field centered">
+                        <div class="red ui labeled icon button" ng-click="delete_course()">
+                            <i class="icon remove"></i>刪除課程
+                        </div>
+                    </div>
+                </div>
+                <div class="field centered">
+                    <div class="green ui labeled icon button" ng-click="add_course()">
+                        <i class="icon add"></i>新增一門課程
+                    </div>
+                </div>
+            </form>
+            <h4 class="ui horizontal divider header">輸出課程資料</h4>
+            <div class="output_container">
+                <div class="blue ui button" ng-click="output('courses')">
+                    <i class="file icon"></i>輸出課程資料
                 </div>
             </div>
         </div>
