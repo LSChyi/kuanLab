@@ -95,9 +95,13 @@
 
 .img-header-text {
 	background: rgba(200,200,200, 0.65);
-	border-radius: 6px;
 }
 
 .output_container {
 	text-align: center;
+}
+
+#header_text {
+	padding-top: 1em;
+	padding-bottom: 1em;
 }

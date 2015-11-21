@@ -11,18 +11,18 @@ angular.module('labApp', ['ui.router', 'modify', 'member', 'about'])
                 url: '/about',
                 templateUrl: 'templates/about.html'
             })
-            .state('activities', {
-                url: '/activities'
-            })
             .state('members', {
                 url: '/members',
                 templateUrl: 'templates/members.html'
             })
-            .state('reports', {
-                url: '/reports'
+            .state('courses', {
+                url: '/courses'
             })
-            .state('link_resoreces', {
-                url: '/link_resoreces'
+            .state('publications', {
+                url: '/publications'
+            })
+            .state('projects', {
+                url: '/projects'
             })
             .state('modify', {
                 url: '/open_sesame',
