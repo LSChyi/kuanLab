@@ -8,7 +8,6 @@
             <div class="ui top attached tabular menu">
                 <a class="active item" data-tab="information">個人資訊</a>
                 <a class="item" data-tab="resume">簡歷</a>
-                <a class="item" data-tab="work">著作</a>
             </div>
             <div class="ui bottom attached active tab segment" data-tab="information">
                 <form class="ui form">
@@ -57,16 +56,10 @@
                         <textarea rows="4" ng-model="about.teacher.resume.speciality"></textarea>
                     </div>
                     <div class="field">
-                        <label>教學課程(請以換行區分課程)</label>
-                        <textarea rows="4" ng-model="about.teacher.resume.course"></textarea>
-                    </div>
-                    <div class="field">
                         <label>研究興趣(請以換行區分課程)</label>
                         <textarea rows="4" ng-model="about.teacher.resume.research"></textarea>
                     </div>
                 </form>
-            </div>
-            <div class="ui bottom attached tab segment" data-tab="work">
             </div>
             <h4 class="ui horizontal divider header">輸出about資料</h4>
             <div class="output_container">

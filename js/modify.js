@@ -42,7 +42,6 @@ angular.module('modify', [])
                     var about = angular.copy($scope.about);
                     about.teacher.resume.experience = about.teacher.resume.experience.split("\n");
                     about.teacher.resume.speciality = about.teacher.resume.speciality.split("\n");
-                    about.teacher.resume.course = about.teacher.resume.course.split("\n");
                     about.teacher.resume.research = about.teacher.resume.research.split("\n");
                     content += angular.toJson(about);
                     break;
@@ -59,11 +58,10 @@ angular.module('modify', [])
                     $scope.about = res;
                     $scope.about.teacher.resume.experience = $scope.about.teacher.resume.experience.toString().replace(/,/g, "\n");
                     $scope.about.teacher.resume.speciality = $scope.about.teacher.resume.speciality.toString().replace(/,/g, "\n");
-                    $scope.about.teacher.resume.course = $scope.about.teacher.resume.course.toString().replace(/,/g, "\n");
                     $scope.about.teacher.resume.research = $scope.about.teacher.resume.research.toString().replace(/,/g, "\n");
                 })
                 .error(function() {
-                    alert("去得about頁面資料發生錯誤，請聯絡管理員")
+                    alert("取得about頁面資料發生錯誤，請聯絡管理員")
                 })
         }
     })
