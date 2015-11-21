@@ -5,6 +5,9 @@ angular.module('modify', [])
 
         $scope.init_modify = function() {
             $('.menu .item').tab();
+            $scope.retrieve_about();
+            $scope.retrieve_members();
+            $scope.retrieve_courses();
         }
 
         $scope.retrieve_members = function() {
@@ -13,7 +16,7 @@ angular.module('modify', [])
                     $scope.members = res;
                 })
                 .error(function() {
-                    alert("取得成員資料錯誤發生, 請聯絡管理員")
+                    alert("取得成員資料錯誤發生, 請聯絡管理員");
                 })
         }
 
@@ -45,6 +48,10 @@ angular.module('modify', [])
                     about.teacher.resume.research = about.teacher.resume.research.split("\n");
                     content += angular.toJson(about);
                     break;
+                case 'courses':
+                    link.setAttribute("download", "courses.html");
+                    content += angular.toJson($scope.courses);
+                    break;
             }
 
             var encodedUri = encodeURI(content);
@@ -61,7 +68,29 @@ angular.module('modify', [])
                     $scope.about.teacher.resume.research = $scope.about.teacher.resume.research.toString().replace(/,/g, "\n");
                 })
                 .error(function() {
-                    alert("取得about頁面資料發生錯誤，請聯絡管理員")
+                    alert("取得about頁面資料發生錯誤，請聯絡管理員");
                 })
+        }
+
+        $scope.retrieve_courses = function() {
+            $http.get('data/courses.html')
+                .success(function(res) {
+                    $scope.courses = res;
+                })
+                .error(function() {
+                    alert("取得about頁面資料發生錯誤，請聯絡管理員");
+                })
+        }
+
+        $scope.add_course = function() {
+            $scope.courses.push({
+                name: "",
+                description: ""
+            })
+        }
+
+        $scope.delete_course = function(course) {
+            var index = $scope.courses.indexOf(course);
+            $scope.courses.splice(index, 1);
         }
     })

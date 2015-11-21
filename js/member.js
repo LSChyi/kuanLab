@@ -6,7 +6,6 @@ angular.module('member', [])
             $http.get('data/members.html')
                 .success(function(res) {
                     $scope.members = res;
-                    console.log(res);
                 })
                 .error(function() {
                     alert("發生錯誤，請聯絡管理人");
