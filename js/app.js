@@ -46,6 +46,13 @@ angular.module('labApp', ['ui.router', 'modify', 'member', 'about', '720kb.datep
                 // create sidebar and attach to menu open
                 $('.ui.sidebar')
                     .sidebar('attach events', '.toc.item');
+
+                $('.nav_item').on('click', function() {
+                    $.smoothScroll({
+                        scrollElement: $('body'),
+                        scrollTarget: '#content'
+                    });
+                });
             })
         }
     })
