@@ -82,12 +82,12 @@
                             <input type="text" ng-model="member.title" placeholder="職稱">
                         </div>
                         <div class="field">
-                            <datepicker date-format="yyyy/MM/dd">
+                            <datepicker date-format="yyyy/MM/dd" date-max-limit="{{member.end}}">
                                 <input ng-model="member.start" type="text" placeholder="起始日期" />
                             </datepicker>
                         </div>
                         <div class="field">
-                            <datepicker date-format="yyyy/MM/dd">
+                            <datepicker date-format="yyyy/MM/dd" date-min-limit="{{member.start}}">
                                 <input ng-model="member.end" type="text" placeholder="結束日期" />
                             </datepicker>
                         </div>
