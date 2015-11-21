@@ -8,20 +8,21 @@ angular.module('labApp', ['ui.router', 'modify', 'member'])
                 templateUrl: 'templates/home.html'
             })
             .state('about', {
-                url: '/about'
-            })
-            .state('activities', {
-                url: '/activities'
+                url: '/about',
+                templateUrl: 'templates/about.html'
             })
             .state('members', {
                 url: '/members',
                 templateUrl: 'templates/members.html'
             })
-            .state('reports', {
-                url: '/reports'
+            .state('courses', {
+                url: '/courses'
             })
-            .state('link_resoreces', {
-                url: '/link_resoreces'
+            .state('publications', {
+                url: '/publications'
+            })
+            .state('projects', {
+                url: '/projects'
             })
             .state('modify', {
                 url: '/open_sesame',
