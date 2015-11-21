@@ -5,39 +5,64 @@
             <a class="item" data-tab="members">修改成員</a>
         </div>
         <div class="ui bottom attached active tab segment" data-tab="about" ng-init="retrieve_about()">
-            <div class="ui bottom attached active tab segment" data-tab="information">
+            <form class="ui form">
+                <div class="field">
+                    <label>照片檔案名</label>
+                    <input type="text" ng-model="about.teacher.img">
+                </div>
+                <div class="inline field">
+                    <label>姓名</label>
+                    <input type="text" ng-model="about.teacher.name">
+                </div>
+                <div class="inline field">
+                    <label>職稱</label>
+                    <input type="text" ng-model="about.teacher.title">
+                </div>
+                <div class="inline field">
+                    <label>辦公室</label>
+                    <input type="text" ng-model="about.teacher.office">
+                </div>
+                <div class="inline field">
+                    <label>電話</label>
+                    <input type="text" ng-model="about.teacher.phone">
+                </div>
+                <div class="inline field">
+                    <label>傳真</label>
+                    <input type="text" ng-model="about.teacher.fax">
+                </div>
+                <div class="inline field">
+                    <label>信箱</label>
+                    <input type="text" ng-model="about.teacher.mail">
+                </div>
+            </form>
+            <!-- <div class="ui bottom attached active tab segment" data-tab="information">
+            </div> -->
+            <!-- <div class="ui bottom attached tab segment" data-tab="resume">
                 <form class="ui form">
                     <div class="field">
-                        <label>照片檔案名</label>
-                        <input type="text" ng-model="about.teacher.img">
+                        <label>學歷</label>
+                        <input type="text" ng-model="about.teacher.resume.educational_background">
                     </div>
-                    <div class="inline field">
-                        <label>姓名</label>
-                        <input type="text" ng-model="about.teacher.name">
+                    <div class="field">
+                        <label>經歷(請以換行區分課程)</label>
+                        <textarea rows="4" ng-model="about.teacher.resume.experience"></textarea>
                     </div>
-                    <div class="inline field">
-                        <label>職稱</label>
-                        <input type="text" ng-model="about.teacher.title">
+                    <div class="field">
+                        <label>專長(請以換行區分課程)</label>
+                        <textarea rows="4" ng-model="about.teacher.resume.speciality"></textarea>
                     </div>
-                    <div class="inline field">
-                        <label>辦公室</label>
-                        <input type="text" ng-model="about.teacher.office">
+                    <div class="field">
+                        <label>教學課程(請以換行區分課程)</label>
+                        <textarea rows="4" ng-model="about.teacher.resume.course"></textarea>
                     </div>
-                    <div class="inline field">
-                        <label>電話</label>
-                        <input type="text" ng-model="about.teacher.phone">
-                    </div>
-                    <div class="inline field">
-                        <label>傳真</label>
-                        <input type="text" ng-model="about.teacher.fax">
-                    </div>
-                    <div class="inline field">
-                        <label>信箱</label>
-                        <input type="text" ng-model="about.teacher.mail">
+                    <div class="field">
+                        <label>研究興趣(請以換行區分課程)</label>
+                        <textarea rows="4" ng-model="about.teacher.resume.research"></textarea>
                     </div>
                 </form>
             </div>
-            
+            <div class="ui bottom attached tab segment" data-tab="work">
+            </div> -->
             <h4 class="ui horizontal divider header">輸出about資料</h4>
             <div class="output_container">
                 <div class="blue ui icon button" ng-click="output('about')">
