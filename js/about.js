@@ -3,6 +3,7 @@ angular.module('about', [])
         $scope.teacher = {};
 
         $scope.init_about = function() {
+            $('.menu .item').tab();
             $http.get('data/about.html')
                 .success(function(res) {
                     $scope.teacher = res.teacher;
