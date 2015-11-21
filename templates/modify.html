@@ -99,7 +99,8 @@
                             <input type="text" ng-model="member.img" placeholder="圖片檔名">
                         </div>
                         <div class="field">
-                            <input type="text" ng-model="member.title" placeholder="職稱">
+                            <!-- <input type="text" ng-model="member.title" placeholder="職稱"> -->
+                            <title-dropdown member="member"></title-dropdown>
                         </div>
                         <div class="field">
                             <datepicker date-format="yyyy/MM/dd" date-max-limit="{{member.end}}">

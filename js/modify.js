@@ -1,4 +1,4 @@
-angular.module('modify', [])
+angular.module('modify', [ '720kb.datepicker', 'myDropdown' ])
     .controller('modifyCtrl', function($scope, $http) {
         $scope.home = {};
         $scope.members = [];
@@ -7,6 +7,7 @@ angular.module('modify', [])
 
         $scope.init_modify = function() {
             $('.menu .item').tab();
+            $('.ui.dropdown').dropdown();
             $scope.retrieve_about();
             $scope.retrieve_members();
             $scope.retrieve_courses();
