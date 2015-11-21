@@ -1,12 +1,88 @@
-<div class="row" ng-controller="aboutCtrl" ng-init="init_about()">
-    <div class="eight wide column">
-        <img class="ui centered medium rounded image" ng-src="{{teacher.img}}">
-        <div class="ui top attached tabular menu">
-            <a class="active item" data-tab="information">個人資訊</a>
-            <a class="item" data-tab="history">簡歷</a>
-            <a class="item" data-tab="work">著作</a>
+<div ng-controller="aboutCtrl" ng-init="init_about()" class="ui centered stackable grid">
+    <div class="row">
+        <div class="eight wide column">
+            <img class="ui centered medium rounded image" ng-src="{{teacher.img}}">
+            <!-- <div class="ui bottom attached tab segment" data-tab="history">
+                <div class="ui centered card">
+                    <div class="content">
+                        <div class="header">學歷</div>
+                        <div class="description">{{ teacher.resume.educational_background }}</div>
+                    </div>
+                </div>
+                <div class="ui centered card">
+                    <div class="content">
+                        <div class="header">經歷</div>
+                        <div class="description" ng-repeat="e in teacher.resume.experience">{{ e }}</div>
+                    </div>
+                </div>
+                <div class="ui centered card">
+                    <div class="content">
+                        <div class="header">專長</div>
+                        <div class="description" ng-repeat="e in teacher.resume.speciality">{{ e }}</div>
+                    </div>
+                </div>
+                <div class="ui centered card">
+                    <div class="content">
+                        <div class="header">教學課程</div>
+                        <div class="description" ng-repeat="e in teacher.resume.course">{{ e }}</div>
+                    </div>
+                </div>
+                <div class="ui centered card">
+                    <div class="content">
+                        <div class="header">研究興趣</div>
+                        <div class="description" ng-repeat="e in teacher.resume.research">{{ e }}</div>
+                    </div>
+                </div>
+            </div>
+            <div class="ui bottom attached tab segment" data-tab="work">
+                <div class="ui item">
+                    <div class="ui tag labels">
+                        <a class="ui tag label">期刊論文</a>
+                        <a class="ui tag label">SCI or SSCI Journal Papers</a>
+                    </div>
+                    <table class="ui selectable striped celled table">
+                        <tr>
+                            <td>Chang, C.L., Lin, Y.T., Chiueh, P.T.* (2014). Single Criterion and Multiple Criteria Analysis: A Comparison of Water Quality Monitoring Designs for a River System. Water Resources Management. 28, 645-655.</td>
+                        </tr>
+                        <tr>
+                            <td>Hu, S.Y., Chiueh, P.T., Hsieh, P.C.* (2014). A novel semianalytical approach for non-uniform vegetated flows. Advances in Water Resources. 64, 1-8.</td>
+                        </tr>
+                    </table>
+                    <br />
+                </div>
+                <div class="ui item">
+                    <div class="ui tag labels">
+                        <a class="ui tag label">期刊論文</a>
+                        <a class="ui tag label">Other Journal Papers</a>
+                    </div>
+                    <table class="ui selectable striped celled table">
+                        <tr>
+                            <td>Syu, F. S., Chiueh, P.T.* (2012). Process simulation of rice straw torrefaction. Sustainable Environment Research, 22 (3):177-183.</td>
+                        </tr>
+                    </table>
+                    <br />
+                </div>
+                <div class="ui tag labels">
+                    <a class="ui tag label">研討會論文</a>
+                    <a class="ui tag label">International Conferences</a>
+                </div>
+                <table class="ui selectable striped celled table">
+                    <tr>
+                        <td>Chiang, T. W., Chang, C. L., Chiueh, P. T.* (2014/9). A Reservoir-Based Impact Assessment of Regional Water Consumption for Use in LCAs. The 9th International Conference on Urban Watershed Management. Tianjin, China.</td>
+                    </tr>
+                    <tr>
+                        <td>Shiu, H. Y., Chiueh, P. T.*, Lo, S. L. (2014/9). Life Cycle Assessment of Urban Wastewater Treatment. The 9th International Conference on Urban Watershed Management. Tianjin, China.</td>
+                    </tr>
+                </table>
+                <div class="ui tag labels">
+                    <a class="ui tag label">研討會論文</a>
+                    <a class="ui tag label">Domestic Conferences</a>
+                </div>
+            </div> -->
         </div>
-        <div class="ui bottom attached active tab segment" data-tab="information">
+    </div>
+    <div class="row">
+        <div class="eight wide column">
             <table class="ui selectable striped celled table">
                 <tbody>
                     <tr>
@@ -40,83 +116,5 @@
                 </tbody>
             </table>
         </div>
-        <div class="ui bottom attached tab segment" data-tab="history">
-            <div class="ui centered card">
-                <div class="content">
-                    <div class="header">學歷</div>
-                    <div class="description">{{ teacher.resume.educational_background }}</div>
-                </div>
-            </div>
-            <div class="ui centered card">
-                <div class="content">
-                    <div class="header">經歷</div>
-                    <div class="description" ng-repeat="e in teacher.resume.experience">{{ e }}</div>
-                </div>
-            </div>
-            <div class="ui centered card">
-                <div class="content">
-                    <div class="header">專長</div>
-                    <div class="description" ng-repeat="e in teacher.resume.speciality">{{ e }}</div>
-                </div>
-            </div>
-            <div class="ui centered card">
-                <div class="content">
-                    <div class="header">教學課程</div>
-                    <div class="description" ng-repeat="e in teacher.resume.course">{{ e }}</div>
-                </div>
-            </div>
-            <div class="ui centered card">
-                <div class="content">
-                    <div class="header">研究興趣</div>
-                    <div class="description" ng-repeat="e in teacher.resume.research">{{ e }}</div>
-                </div>
-            </div>
-        </div>
-        <div class="ui bottom attached tab segment" data-tab="work">
-            <div class="ui item">
-                <div class="ui tag labels">
-                    <a class="ui tag label">期刊論文</a>
-                    <a class="ui tag label">SCI or SSCI Journal Papers</a>
-                </div>
-                <table class="ui selectable striped celled table">
-                    <tr>
-                        <td>Chang, C.L., Lin, Y.T., Chiueh, P.T.* (2014). Single Criterion and Multiple Criteria Analysis: A Comparison of Water Quality Monitoring Designs for a River System. Water Resources Management. 28, 645-655.</td>
-                    </tr>
-                    <tr>
-                        <td>Hu, S.Y., Chiueh, P.T., Hsieh, P.C.* (2014). A novel semianalytical approach for non-uniform vegetated flows. Advances in Water Resources. 64, 1-8.</td>
-                    </tr>
-                </table>
-                <br />
-            </div>
-            <div class="ui item">
-                <div class="ui tag labels">
-                    <a class="ui tag label">期刊論文</a>
-                    <a class="ui tag label">Other Journal Papers</a>
-                </div>
-                <table class="ui selectable striped celled table">
-                    <tr>
-                        <td>Syu, F. S., Chiueh, P.T.* (2012). Process simulation of rice straw torrefaction. Sustainable Environment Research, 22 (3):177-183.</td>
-                    </tr>
-                </table>
-                <br />
-            </div>
-            <div class="ui tag labels">
-                <a class="ui tag label">研討會論文</a>
-                <a class="ui tag label">International Conferences</a>
-            </div>
-            <table class="ui selectable striped celled table">
-                <tr>
-                    <td>Chiang, T. W., Chang, C. L., Chiueh, P. T.* (2014/9). A Reservoir-Based Impact Assessment of Regional Water Consumption for Use in LCAs. The 9th International Conference on Urban Watershed Management. Tianjin, China.</td>
-                </tr>
-                <tr>
-                    <td>Shiu, H. Y., Chiueh, P. T.*, Lo, S. L. (2014/9). Life Cycle Assessment of Urban Wastewater Treatment. The 9th International Conference on Urban Watershed Management. Tianjin, China.</td>
-                </tr>
-            </table>
-            <div class="ui tag labels">
-                <a class="ui tag label">研討會論文</a>
-                <a class="ui tag label">Domestic Conferences</a>
-            </div>
-        </div>
     </div>
-</div>
 </div>
