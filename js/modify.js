@@ -1,6 +1,8 @@
 angular.module('modify', [])
     .controller('modifyCtrl', function($scope, $http) {
+        $scope.home = {};
         $scope.members = [];
+        $scope.courses = [];
         $scope.about = {};
 
         $scope.init_modify = function() {
@@ -8,6 +10,17 @@ angular.module('modify', [])
             $scope.retrieve_about();
             $scope.retrieve_members();
             $scope.retrieve_courses();
+            $scope.retrieve_home();
+        }
+
+        $scope.retrieve_home = function() {
+            $http.get('data/home.html')
+                .success(function(res) {
+                    $scope.home = res;
+                })
+                .error(function() {
+                    alert("取得首頁資料錯誤發生, 請聯絡管理員");
+                })
         }
 
         $scope.retrieve_members = function() {
@@ -36,6 +49,10 @@ angular.module('modify', [])
             var content = "data:text/csv;charset=utf-8,";
             var link = document.createElement("a");
             switch (type) {
+                case 'home':
+                    link.setAttribute("download", "home.html");
+                    content += angular.toJson($scope.home);
+                    break;
                 case 'members':
                     link.setAttribute("download", "members.html");
                     content += angular.toJson($scope.members);

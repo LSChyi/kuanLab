@@ -1,4 +1,4 @@
-angular.module('labApp', ['ui.router', 'modify', 'member', 'about', '720kb.datepicker', 'courses'])
+angular.module('labApp', ['ui.router', 'modify', 'member', 'about', '720kb.datepicker', 'courses', 'home'])
     .config(function($stateProvider, $urlRouterProvider) {
         $urlRouterProvider.otherwise("/home");
 
