@@ -72,21 +72,41 @@
         </div>
         <div class="ui bottom attached tab segment" data-tab="members">
             <form class="ui form" ng-init="retrieve_members()">
-                <div class="three fields" ng-repeat="member in members">
-                    <div class="field">
-                        <input type="text" ng-model="member.name" placeholder="名字">
-                    </div>
-                    <div class="field">
-                        <input type="text" ng-model="member.img" placeholder="圖片檔名">
-                    </div>
-                    <div class="field">
-                        <div class="circular red ui icon button" ng-click="delete_member(member)">
-                            <i class="remove icon"></i>
+                <div class="ui segment" ng-repeat="member in members">
+                    <div class="seven fields">
+                        <div class="field">
+                            <input type="text" ng-model="member.name" placeholder="名字">
+                        </div>
+                        <div class="field">
+                            <input type="text" ng-model="member.img" placeholder="圖片檔名">
+                        </div>
+                        <div class="field">
+                            <input type="text" ng-model="member.title" placeholder="職稱">
+                        </div>
+                        <div class="field">
+                            <datepicker date-format="yyyy/MM/dd">
+                                <input ng-model="member.start" type="text" placeholder="起始日期" />
+                            </datepicker>
+                        </div>
+                        <div class="field">
+                            <datepicker date-format="yyyy/MM/dd">
+                                <input ng-model="member.end" type="text" placeholder="結束日期" />
+                            </datepicker>
+                        </div>
+                        <div class="field">
+                            <input type="text" ng-model="member.mail" placeholder="email">
+                        </div>
+                        <div class="field">
+                            <div class="circular red ui icon button" ng-click="delete_member(member)">
+                                <i class="remove icon"></i>
+                            </div>
                         </div>
                     </div>
                 </div>
-                <div class="circular green ui icon button" ng-click="add_member()">
-                    <i class="icon add"></i>
+                <div class="field centered">
+                    <div class="green ui labeled icon button" ng-click="add_member()">
+                        <i class="icon add"></i>新增一位成員
+                    </div>
                 </div>
             </form>
             <h4 class="ui horizontal divider header">輸出成員資料</h4>
