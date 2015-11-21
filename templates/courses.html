@@ -1,4 +1,6 @@
-<div class="ui segment">
-    <h2 class="ui h2">class name</h2>
-    <p>description</p>
+<div ng-controller="coursesCtrl" ng-init="init_courses()">
+    <div class="ui segment" ng-repeat="course in courses">
+        <h2 class="ui h2">{{ course.name }}</h2>
+        <p>{{ course.description }}</p>
+    </div>
 </div>
