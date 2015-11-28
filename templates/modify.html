@@ -5,6 +5,7 @@
             <a class="item" data-tab="about">修改老師資料</a>
             <a class="item" data-tab="members">修改成員</a>
             <a class="item" data-tab="courses">修改課程</a>
+            <a class="item" data-tab="publications">修改著作</a>
         </div>
         <div class="ui bottom attached active tab segment" data-tab="home">
             <form class="ui form">
@@ -160,6 +161,52 @@
             <div class="output_container">
                 <div class="blue ui button" ng-click="output('courses')">
                     <i class="file icon"></i>輸出課程資料
+                </div>
+            </div>
+        </div>
+        <div class="ui bottom attached tab segment" data-tab="publications">
+            <form class="ui form">
+                <div class="ui segment" ng-repeat="category in publications">
+                    <div class="two fields">
+                        <div class="thirteen  wide field">
+                            <input type="text" ng-model="category.type" placeholder="例: 分類名稱，期刊論文, 研討會論文...">
+                        </div>
+                       <div class="three wide field">
+                           <div class="fluid red ui labeled icon button" ng-click="delete_publication_category(category)">
+                                <i class="icon remove"></i>刪除此分類
+                            </div>
+                       </div> 
+                    </div>
+                    <div class="ui segment" ng-repeat="sub_category in category.sub_categories">
+                        <div class="field">
+                            <div class="fluid red ui labeled icon button" ng-click="delete_publication_sub_category(category.sub_categories, sub_category)">
+                                <i class="icon remove"></i>刪除此次分類
+                            </div>
+                        </div>
+                        <div class="field">
+                            <input type="text" ng-model="sub_category.type" placeholder="次分類名稱，例: SCI or SSCI Journal Papers">
+                        </div>
+                        <div class="field">
+                            <label>項目內容(請以換行區分條目)</label>
+                            <textarea ng-model="sub_category.content"></textarea>
+                        </div>
+                    </div>
+                    <div class="field centered">
+                        <div class="green ui labeled icon button" ng-click="add_publication_sub_category(category)">
+                            <i class="add icon"></i>於此分類新增次分類
+                        </div>
+                    </div>
+                </div>
+                <div class="field centered">
+                    <div class="green ui labeled icon button" ng-click="add_publication_category()">
+                        <i class="icon add"></i>新增一種分類
+                    </div>
+                </div>
+            </form>
+            <h4 class="ui horizontal divider header">輸出著作資料</h4>
+            <div class="output_container">
+                <div class="blue ui button" ng-click="output('publications')">
+                    <i class="file icon"></i>輸出著作資料
                 </div>
             </div>
         </div>

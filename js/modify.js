@@ -4,6 +4,7 @@ angular.module('modify', [ '720kb.datepicker', 'myDropdown' ])
         $scope.members = [];
         $scope.courses = [];
         $scope.about = {};
+        $scope.publications = [];
 
         $scope.init_modify = function() {
             $('.menu .item').tab();
@@ -12,6 +13,7 @@ angular.module('modify', [ '720kb.datepicker', 'myDropdown' ])
             $scope.retrieve_members();
             $scope.retrieve_courses();
             $scope.retrieve_home();
+            $scope.retrieve_publication();
         }
 
         $scope.retrieve_home = function() {
@@ -70,6 +72,16 @@ angular.module('modify', [ '720kb.datepicker', 'myDropdown' ])
                     link.setAttribute("download", "courses.html");
                     content += angular.toJson($scope.courses);
                     break;
+                case 'publications':
+                    link.setAttribute("download", "publication.html")
+                    var publications = angular.copy($scope.publications);
+                    for(var i = 0; i < publications.length; ++i) {
+                        for(var j = 0; j < publications[i].sub_categories.length; ++j) {
+                            publications[i].sub_categories[j].content = publications[i].sub_categories[j].content.split("\n");
+                        }
+                    }
+                    content += angular.toJson(publications);
+                    break;
             }
 
             var encodedUri = encodeURI(content);
@@ -110,5 +122,36 @@ angular.module('modify', [ '720kb.datepicker', 'myDropdown' ])
         $scope.delete_course = function(course) {
             var index = $scope.courses.indexOf(course);
             $scope.courses.splice(index, 1);
+        }
+
+        $scope.retrieve_publication = function() {
+            $http.get('data/publication.html')
+                .success(function(res) {
+                    $scope.publications = res;
+                })
+                .error(function() {
+                    alert('取得著作失敗，請聯絡管理員');
+                })
+        }
+
+        $scope.add_publication_category = function() {
+            $scope.publications.push({
+                type: "",
+                sub_categories: []
+            });
+        }
+
+        $scope.delete_publication_category = function(category) {
+            var index = $scope.publications.indexOf(category);
+            $scope.publications.splice(index, 1);
+        }
+
+        $scope.add_publication_sub_category = function(category) {
+            category.sub_categories.push({});
+        }
+
+        $scope.delete_publication_sub_category = function(sub_categories, sub_category) {
+            var index = sub_categories.indexOf(sub_category);
+            sub_categories.splice(index, 1);
         }
     })
