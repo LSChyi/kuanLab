@@ -3,7 +3,7 @@ angular.module('project', [ '720kb.datepicker' ])
         $scope.init_project = function() {
             $http.get('data/projects.html')
                 .success(function(res) {
-                    console.log(res);
+                    $scope.projects = res;
                 })
                 .error(function() {
                     alert('取得專案資料錯誤，請聯絡管理員');

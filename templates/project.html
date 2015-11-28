@@ -1,3 +1,9 @@
 <div ng-controller="projectCtrl" ng-init="init_project()">
-    
+    <div class="row ui segment" ng-repeat="project in projects">
+        <h2 class="ui h2">{{ project.name }}</h2>
+        <a class="ui teal tag label" ng-if="project.agency">委託單位: {{ project.agency }}</a>
+        <a class="ui tag label" ng-if="project.start||project.end">執行時間: {{ project.start }} ~ {{ project.end }}</a>
+        <div ng-if="project.description"></div>
+        <p>{{ project.description }}</p>
+    </div>
 </div>
