@@ -107,5 +107,6 @@
 }
 
 .centered {
-	text-align: center;
+	margin-right: auto;
+	margin-left: auto;
 }

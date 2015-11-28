@@ -3,6 +3,7 @@ angular.module('publication', [])
         $scope.init_publicaion = function() {
             $http.get('data/publication.html')
                 .success(function(res) {
+                    $scope.publications = res;
                     console.log(res);
                 })
                 .error(function() {
