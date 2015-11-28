@@ -128,6 +128,11 @@ angular.module('modify', [ '720kb.datepicker', 'myDropdown' ])
             $http.get('data/publication.html')
                 .success(function(res) {
                     $scope.publications = res;
+                    for(var i = 0; i < $scope.publications.length; ++i) {
+                        for(var j = 0; j < $scope.publications[i].sub_categories.length; ++j) {
+                            $scope.publications[i].sub_categories[j].content = $scope.publications[i].sub_categories[j].content.join(";").replace(/;/g, "\n");
+                        }
+                    }
                 })
                 .error(function() {
                     alert('取得著作失敗，請聯絡管理員');
