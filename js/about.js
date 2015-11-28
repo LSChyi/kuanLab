@@ -4,7 +4,7 @@ angular.module('about', [])
 
         $scope.init_about = function() {
             $('.menu .item').tab();
-            $http.get('data/about.html')
+            $http.get('data/about.dat')
                 .success(function(res) {
                     $scope.teacher = res.teacher;
                 })

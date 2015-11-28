@@ -1,7 +1,7 @@
 angular.module('project', [ '720kb.datepicker' ])
     .controller('projectCtrl', function($scope, $http) {
         $scope.init_project = function() {
-            $http.get('data/projects.html')
+            $http.get('data/projects.dat')
                 .success(function(res) {
                     $scope.projects = res;
                 })

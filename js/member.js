@@ -9,7 +9,7 @@ angular.module('member', [])
         $scope.none = [];
 
         $scope.init_member = function() {
-            $http.get('data/members.html')
+            $http.get('data/members.dat')
                 .success(function(res) {
                     for(var i = 0; i < res.length; ++i) {
                         switch (res[i].title) {

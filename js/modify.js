@@ -19,7 +19,7 @@ angular.module('modify', [ '720kb.datepicker', 'myDropdown' ])
         }
 
         $scope.retrieve_home = function() {
-            $http.get('data/home.html')
+            $http.get('data/home.dat')
                 .success(function(res) {
                     $scope.home = res;
                 })
@@ -29,7 +29,7 @@ angular.module('modify', [ '720kb.datepicker', 'myDropdown' ])
         }
 
         $scope.retrieve_members = function() {
-            $http.get('data/members.html')
+            $http.get('data/members.dat')
                 .success(function(res) {
                     $scope.members = res;
                 })
@@ -55,15 +55,15 @@ angular.module('modify', [ '720kb.datepicker', 'myDropdown' ])
             var link = document.createElement("a");
             switch (type) {
                 case 'home':
-                    link.setAttribute("download", "home.html");
+                    link.setAttribute("download", "home.dat");
                     content += angular.toJson($scope.home);
                     break;
                 case 'members':
-                    link.setAttribute("download", "members.html");
+                    link.setAttribute("download", "members.dat");
                     content += angular.toJson($scope.members);
                     break;
                 case 'about':
-                    link.setAttribute("download", "about.html");
+                    link.setAttribute("download", "about.dat");
                     var about = angular.copy($scope.about);
                     about.teacher.resume.experience = about.teacher.resume.experience.split("\n");
                     about.teacher.resume.speciality = about.teacher.resume.speciality.split("\n");
@@ -71,11 +71,11 @@ angular.module('modify', [ '720kb.datepicker', 'myDropdown' ])
                     content += angular.toJson(about);
                     break;
                 case 'courses':
-                    link.setAttribute("download", "courses.html");
+                    link.setAttribute("download", "courses.dat");
                     content += angular.toJson($scope.courses);
                     break;
                 case 'publications':
-                    link.setAttribute("download", "publication.html")
+                    link.setAttribute("download", "publication.dat")
                     var publications = angular.copy($scope.publications);
                     for(var i = 0; i < publications.length; ++i) {
                         for(var j = 0; j < publications[i].sub_categories.length; ++j) {
@@ -85,7 +85,7 @@ angular.module('modify', [ '720kb.datepicker', 'myDropdown' ])
                     content += angular.toJson(publications);
                     break;
                 case 'projects':
-                    link.setAttribute("download", "projects.html")
+                    link.setAttribute("download", "projects.dat")
                     content += angular.toJson($scope.projects);
                     break;
             }
@@ -96,7 +96,7 @@ angular.module('modify', [ '720kb.datepicker', 'myDropdown' ])
         }
 
         $scope.retrieve_about = function() {
-            $http.get('data/about.html')
+            $http.get('data/about.dat')
                 .success(function(res) {
                     $scope.about = res;
                     $scope.about.teacher.resume.experience = $scope.about.teacher.resume.experience.toString().replace(/,/g, "\n");
@@ -109,7 +109,7 @@ angular.module('modify', [ '720kb.datepicker', 'myDropdown' ])
         }
 
         $scope.retrieve_courses = function() {
-            $http.get('data/courses.html')
+            $http.get('data/courses.dat')
                 .success(function(res) {
                     $scope.courses = res;
                 })
@@ -131,7 +131,7 @@ angular.module('modify', [ '720kb.datepicker', 'myDropdown' ])
         }
 
         $scope.retrieve_publication = function() {
-            $http.get('data/publication.html')
+            $http.get('data/publication.dat')
                 .success(function(res) {
                     $scope.publications = res;
                     for(var i = 0; i < $scope.publications.length; ++i) {
@@ -167,7 +167,7 @@ angular.module('modify', [ '720kb.datepicker', 'myDropdown' ])
         }
 
         $scope.retrieve_project = function() {
-            $http.get('data/projects.html')
+            $http.get('data/projects.dat')
                 .success(function(res) {
                     $scope.projects = res;
                 })

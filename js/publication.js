@@ -1,7 +1,7 @@
 angular.module('publication', [])
     .controller('publicationCtrl', function($scope, $http) {
         $scope.init_publicaion = function() {
-            $http.get('data/publication.html')
+            $http.get('data/publication.dat')
                 .success(function(res) {
                     $scope.publications = res;
                     console.log(res);

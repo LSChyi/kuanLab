@@ -1,7 +1,7 @@
 angular.module('home', [])
     .controller('homeCtrl', function($scope, $http) {
         $scope.init_home = function() {
-            $http.get('data/home.html')
+            $http.get('data/home.dat')
                 .success(function(res) {
                     $scope.home = res;
                 })

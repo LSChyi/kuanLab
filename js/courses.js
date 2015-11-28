@@ -1,7 +1,7 @@
 angular.module('courses', [])
     .controller('coursesCtrl', function($scope, $http) {
         $scope.init_courses = function() {
-            $http.get('data/courses.html')
+            $http.get('data/courses.dat')
                 .success(function(res) {
                     $scope.courses = res;
                     console.log($scope.courses);
