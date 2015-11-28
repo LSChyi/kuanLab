@@ -109,3 +109,13 @@
 .centered {
 	text-align: center;
 }
+
+.row {
+	margin-top: 12px;
+	margin-bottom: 12px;
+}
+
+.center_cards {
+	display: flex;
+	justify-content: center;
+}
