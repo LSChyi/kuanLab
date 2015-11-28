@@ -5,6 +5,7 @@ angular.module('modify', [ '720kb.datepicker', 'myDropdown' ])
         $scope.courses = [];
         $scope.about = {};
         $scope.publications = [];
+        $scope.projects = [];
 
         $scope.init_modify = function() {
             $('.menu .item').tab();
@@ -14,6 +15,7 @@ angular.module('modify', [ '720kb.datepicker', 'myDropdown' ])
             $scope.retrieve_courses();
             $scope.retrieve_home();
             $scope.retrieve_publication();
+            $scope.retrieve_project();
         }
 
         $scope.retrieve_home = function() {
@@ -81,6 +83,10 @@ angular.module('modify', [ '720kb.datepicker', 'myDropdown' ])
                         }
                     }
                     content += angular.toJson(publications);
+                    break;
+                case 'projects':
+                    link.setAttribute("download", "projects.html")
+                    content += angular.toJson($scope.projects);
                     break;
             }
 
@@ -158,5 +164,24 @@ angular.module('modify', [ '720kb.datepicker', 'myDropdown' ])
         $scope.delete_publication_sub_category = function(sub_categories, sub_category) {
             var index = sub_categories.indexOf(sub_category);
             sub_categories.splice(index, 1);
+        }
+
+        $scope.retrieve_project = function() {
+            $http.get('data/projects.html')
+                .success(function(res) {
+                    $scope.projects = res;
+                })
+                .error(function() {
+                    alert('取得專案資料錯誤，請聯絡管理員');
+                })
+        }
+
+        $scope.add_project = function() {
+            $scope.projects.push({});
+        }
+
+        $scope.delete_project = function(project) {
+            var index = $scope.projects.indexOf(project);
+            $scope.projects.splice(index, 1);
         }
     })

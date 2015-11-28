@@ -6,6 +6,7 @@
             <a class="item" data-tab="members">修改成員</a>
             <a class="item" data-tab="courses">修改課程</a>
             <a class="item" data-tab="publications">修改著作</a>
+            <a class="item" data-tab="projects">修改專案</a>
         </div>
         <div class="ui bottom attached active tab segment" data-tab="home">
             <form class="ui form">
@@ -100,7 +101,6 @@
                             <input type="text" ng-model="member.img" placeholder="圖片檔名">
                         </div>
                         <div class="field">
-                            <!-- <input type="text" ng-model="member.title" placeholder="職稱"> -->
                             <title-dropdown member="member"></title-dropdown>
                         </div>
                         <div class="field">
@@ -207,6 +207,50 @@
             <div class="output_container">
                 <div class="blue ui button" ng-click="output('publications')">
                     <i class="file icon"></i>輸出著作資料
+                </div>
+            </div>
+        </div>
+        <div class="ui bottom attached tab segment" data-tab="projects">
+            <form class="ui form">
+                <div class="ui segment" ng-repeat="project in projects">
+                    <div class="field">
+                        <input type="text" ng-model="project.name" placeholder="計畫名稱">
+                    </div>
+                    <div class="field">
+                        <input type="text" ng-model="project.agency" placeholder="委託單位">
+                    </div>
+                    <div class="two fields">
+                        <div class="field">
+                            <datepicker date-format="yyyy/MM/dd" date-max-limit="{{project.end}}">
+                                <input ng-model="project.start" type="text" placeholder="執行起始日" />
+                            </datepicker>
+                        </div>
+                        <div class="field">
+                            <datepicker date-format="yyyy/MM/dd" date-min-limit="{{project.start}}">
+                                <input ng-model="project.end" type="text" placeholder="執行終止日" />
+                            </datepicker>
+                        </div>
+                    </div>
+                    <div class="field">
+                        <label>備註</label>
+                        <textarea ng-model="project.description"></textarea>
+                    </div>
+                    <div class="field centered">
+                        <div class="red ui labeled icon button" ng-click="delete_project(project)">
+                            <i class="icon remove"></i>刪除專案
+                        </div>
+                    </div>
+                </div>
+                <div class="field centered">
+                    <div class="green ui labeled icon button" ng-click="add_project()">
+                        <i class="icon add"></i>新增一筆專案
+                    </div>
+                </div>
+            </form>
+            <h4 class="ui horizontal divider header">輸出專案資料</h4>
+            <div class="output_container">
+                <div class="blue ui button" ng-click="output('projects')">
+                    <i class="file icon"></i>輸出專案資料
                 </div>
             </div>
         </div>
