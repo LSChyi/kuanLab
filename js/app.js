@@ -35,20 +35,26 @@ angular.module('labApp', ['ui.router', 'modify', 'member', 'about', 'courses', '
     .controller('navCtrl', function($scope) {
         $scope.nav_init = function() {
             angular.element(document).ready(function() {
-                $('.secondary.pointing.menu')
-                    .visibility({
-                        once: false,
-                        onBottomPassed: function() {
-                            $('.fixed.menu').transition('fade in');
-                        },
-                        onBottomPassedReverse: function() {
-                            $('.fixed.menu').transition('fade out');
-                        }
+                if($(window).width() > 700) {
+                    $('.secondary.pointing.menu')
+                        .visibility({
+                            once: false,
+                            onBottomPassed: function() {
+                                $('.fixed.menu').transition('fade in');
+                            },
+                            onBottomPassedReverse: function() {
+                                $('.fixed.menu').transition('fade out');
+                            }
+                        });
+                }
+                else {
+                    // create sidebar and attach to menu open
+                    $('.ui.sidebar')
+                        .sidebar('attach events', '.toc.item', 'show');
+                    $('.ui.vertical.inverted.sidebar.menu').children().click(function() {
+                        $('.ui.sidebar').sidebar('hide');
                     });
-
-                // create sidebar and attach to menu open
-                $('.ui.sidebar')
-                    .sidebar('attach events', '.toc.item');
+                }
 
                 $('.nav_item').on('click', function() {
                     $.smoothScroll({
