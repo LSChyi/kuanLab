@@ -217,6 +217,9 @@
             <form class="ui form">
                 <div class="ui segment" ng-repeat="project in projects">
                     <div class="field">
+                        <input type="text" ng-model="project.en_name" placeholder="Project name">
+                    </div>
+                    <div class="field">
                         <input type="text" ng-model="project.name" placeholder="計畫名稱">
                     </div>
                     <div class="field">
