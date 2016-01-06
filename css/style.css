@@ -119,3 +119,11 @@
 	display: flex;
 	justify-content: center;
 }
+
+.ui.card .image {
+	width: 290px;
+	height: 290px;
+	background-repeat: no-repeat !important;
+	background-size: cover !important;
+	background-position: center !important;
+}
