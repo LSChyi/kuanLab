@@ -4,8 +4,6 @@ angular.module('courses', [])
             $http.get('data/courses.dat')
                 .success(function(res) {
                     $scope.courses = res;
-                    console.log($scope.courses);
-                    console.log(res);
                 })
                 .error(function() {
                     alert("發生錯誤，請聯絡管理人");

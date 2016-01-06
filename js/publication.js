@@ -4,7 +4,6 @@ angular.module('publication', [])
             $http.get('data/publication.dat')
                 .success(function(res) {
                     $scope.publications = res;
-                    console.log(res);
                 })
                 .error(function() {
                     alert('取得著作失敗，請聯絡管理員');
