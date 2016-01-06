@@ -1,8 +1,8 @@
 <div ng-controller="publicationCtrl" ng-init="init_publicaion()">
     <div ng-repeat="category in publications">
         <div ng-repeat="sub_category in category.sub_categories">
-            <a class="ui blue tag label">{{ category.type }}</a>
-            <a class="ui teal tag label">{{ sub_category.type }}</a>
+            <a class="ui blue tag label" ng-if="category.type">{{ category.type }}</a>
+            <a class="ui teal tag label" ng-if="sub_category.type">{{ sub_category.type }}</a>
             <table class="ui selectable celled striped table">
                 <tr ng-repeat="item in sub_category.content">
                     <td>{{ item }}</td>
