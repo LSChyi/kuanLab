@@ -3,7 +3,7 @@ angular.module('courses', [])
         $scope.init_courses = function() {
             $http.get('data/courses.dat')
                 .success(function(res) {
-                    $scope.courses = res;
+                    $scope.courses = res.reverse();
                 })
                 .error(function() {
                     alert("發生錯誤，請聯絡管理人");
