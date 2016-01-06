@@ -3,34 +3,34 @@
         <div class="eight wide column">
             <img class="ui centered medium rounded image" ng-src="img/{{teacher.img}}">
             <div class="ui top attached tabular menu">
-                <a class="active item" data-tab="information">個人資訊</a>
-                <a class="item" data-tab="history">簡歷</a>
+                <a class="active item" data-tab="information">Info</a>
+                <a class="item" data-tab="history">Resume</a>
             </div>
             <div class="ui bottom attached active tab segment" data-tab="information">
                 <table class="ui selectable striped celled table">
                     <tbody>
                         <tr>
-                            <td>姓名</td>
+                            <td>Name</td>
                             <td>{{ teacher.name }}</td>
                         </tr>
                         <tr>
-                            <td>職稱</td>
+                            <td>Title</td>
                             <td>{{ teacher.title }}</td>
                         </tr>
                         <tr>
-                            <td>辦公室</td>
+                            <td>Office</td>
                             <td>{{ teacher.office }}</td>
                         </tr>
                         <tr>
-                            <td>電話</td>
+                            <td>Tel</td>
                             <td>{{ teacher.phone }}</td>
                         </tr>
                         <tr>
-                            <td>傳真</td>
+                            <td>Fax</td>
                             <td>{{ teacher.fax }}</td>
                         </tr>
                         <tr>
-                            <td>信箱</td>
+                            <td>E-mail</td>
                             <td>{{ teacher.mail }}</td>
                         </tr>
                     </tbody>
@@ -39,25 +39,25 @@
             <div class="ui bottom attached tab segment" data-tab="history">
                 <div class="ui centered card">
                     <div class="content">
-                        <div class="header">學歷</div>
+                        <div class="header">Educational background</div>
                         <div class="description">{{ teacher.resume.educational_background }}</div>
                     </div>
                 </div>
                 <div class="ui centered card">
                     <div class="content">
-                        <div class="header">經歷</div>
+                        <div class="header">Experience</div>
                         <div class="description" ng-repeat="e in teacher.resume.experience">{{ e }}</div>
                     </div>
                 </div>
                 <div class="ui centered card">
                     <div class="content">
-                        <div class="header">專長</div>
+                        <div class="header">Speciality</div>
                         <div class="description" ng-repeat="e in teacher.resume.speciality">{{ e }}</div>
                     </div>
                 </div>
                 <div class="ui centered card">
                     <div class="content">
-                        <div class="header">研究興趣</div>
+                        <div class="header">Research Area</div>
                         <div class="description" ng-repeat="e in teacher.resume.research">{{ e }}</div>
                     </div>
                 </div>
