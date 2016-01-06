@@ -127,3 +127,7 @@
 	background-size: cover !important;
 	background-position: center !important;
 }
+
+.content .description {
+	text-align: left;
+}

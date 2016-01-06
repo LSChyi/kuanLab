@@ -46,7 +46,7 @@
                 <div class="ui centered card">
                     <div class="content">
                         <div class="header">Experience</div>
-                        <div class="description" ng-repeat="e in teacher.resume.experience">{{ e }}</div>
+                        <div class="description" ng-repeat="e in teacher.resume.experience track by $index">{{ e }}</div>
                     </div>
                 </div>
                 <div class="ui centered card">
